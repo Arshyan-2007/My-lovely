@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-romantic: 'Courgette', cursive;
+    --font-satisfy: 'Satisfy', cursive;
+    --font-script: 'Courgette', 'Satisfy', cursive;
+    --font-display: 'Poppins', 'Outfit', sans-serif;
+    --font-sans: 'Poppins', 'Outfit', system-ui, -apple-system, sans-serif;
+    --font-serif-luxury: 'Courgette', 'Poppins', system-ui, sans-serif;
+    --font-numbers: 'Outfit', 'Poppins', sans-serif;
+  }
+}
+
+* {
+  font-variant-numeric: lining-nums;
+}
+
+body {
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+
+.font-romantic {
+  font-family: 'Courgette', cursive;
+}
+
+.font-satisfy {
+  font-family: 'Satisfy', cursive;
+}
+
+.font-script {
+  font-family: 'Courgette', 'Satisfy', cursive;
+}
+
+.font-serif-luxury,
+.font-display,
+.font-heading {
+  font-family: 'Poppins', 'Outfit', system-ui, sans-serif;
+  font-feature-settings: normal;
+}
+
+.font-sans {
+  font-family: 'Poppins', 'Outfit', system-ui, sans-serif;
+}
+
+.font-numbers {
+  font-family: 'Outfit', 'Poppins', system-ui, sans-serif;
+  font-variant-numeric: lining-nums tabular-nums !important;
+  font-feature-settings: "lnum" 1, "tnum" 1;
+}
+
+/* Dynamic Romantic Theme Variables */
+[data-theme="rose"] {
+  --primary: #E11D48;
+  --primary-hover: #BE123C;
+  --primary-text: #BE123C;
+  --primary-subtext: #6B2341;
+  --badge-bg: #FFE4EC;
+  --surface-bg: #FFF5F8;
+  --card-bg: #FFFFFF;
+  --card-border: #FBCFE8;
+  --card-shadow: rgba(225, 29, 72, 0.12);
+  --page-bg: #FFF8FA;
+  --page-text: #1E1624;
+  --accent-gold: #F59E0B;
+}
+
+[data-theme="lavender"] {
+  --primary: #8B5CF6;
+  --primary-hover: #7C3AED;
+  --primary-text: #6D28D9;
+  --primary-subtext: #4C2882;
+  --badge-bg: #EDE9FE;
+  --surface-bg: #F5F3FF;
+  --card-bg: #FFFFFF;
+  --card-border: #DDD6FE;
+  --card-shadow: rgba(139, 92, 246, 0.14);
+  --page-bg: #FAF7FD;
+  --page-text: #181126;
+  --accent-gold: #F59E0B;
+}
+
+[data-theme="champagne"] {
+  --primary: #D97706;
+  --primary-hover: #B45309;
+  --primary-text: #B45309;
+  --primary-subtext: #78350F;
+  --badge-bg: #FEF3C7;
+  --surface-bg: #FFFDF0;
+  --card-bg: #FFFFFF;
+  --card-border: #FDE68A;
+  --card-shadow: rgba(217, 119, 6, 0.12);
+  --page-bg: #FCFAF5;
+  --page-text: #241A14;
+  --accent-gold: #D97706;
+}
+
+/* Custom scrollbar for love letter & page */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(243, 230, 225, 0.4);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary, #E11D48);
+  border-radius: 9999px;
+  opacity: 0.6;
+}
+
+/* Fairy tale glowing border and subtle parchment shimmer */
+@keyframes fairyPulse {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(245, 194, 207, 0.4), 0 0 50px rgba(234, 182, 118, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(245, 194, 207, 0.65), 0 0 70px rgba(234, 182, 118, 0.35);
+  }
+}
+
+.fairy-glow {
+  animation: fairyPulse 4s ease-in-out infinite;
+}
+
+@keyframes candleFlicker {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 8px rgba(255, 170, 0, 0.8));
+  }
+  25% {
+    transform: scale(1.06, 0.95) translateY(-1px) rotate(1deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 12px rgba(255, 190, 40, 0.9));
+  }
+  50% {
+    transform: scale(0.96, 1.04) translateY(0.5px) rotate(-1deg);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 7px rgba(255, 150, 0, 0.7));
+  }
+  75% {
+    transform: scale(1.03, 0.98) translateY(-0.5px);
+    opacity: 0.98;
+    filter: drop-shadow(0 0 10px rgba(255, 180, 20, 0.85));
+  }
+}
+
+.candle-flame {
+  animation: candleFlicker 0.9s ease-in-out infinite alternate;
+}
